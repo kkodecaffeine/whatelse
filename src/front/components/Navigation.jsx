@@ -8,9 +8,7 @@ import * as mutations from '../store/mutations';
 const Navigation = ({ id, authenticated }) => (
     <div className="header">
         <Link to="/dashboard">
-            <h1>
-                My Application
-            </h1>
+            
         </Link>
 
         {authenticated ?
