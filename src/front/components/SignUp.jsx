@@ -3,6 +3,7 @@ import * as mutations from '../store/mutations';
 import { connect } from 'react-redux';
 
 const SignUpComponent = ({ requestCreateUserAccount, authenticated }) => {
+  return (
     <div id="signUp" className="col s12">
       <form className="col s12" onSubmit={requestCreateUserAccount}>
         <div className="form-container">
@@ -50,6 +51,9 @@ const SignUpComponent = ({ requestCreateUserAccount, authenticated }) => {
         </div>
       </form>
     </div>
+  );
+};
+    
     // return <div className="card p-3 col-6">
     //     <h2>
     //         Complete the following form to create a new account.
@@ -70,7 +74,6 @@ const SignUpComponent = ({ requestCreateUserAccount, authenticated }) => {
     //     </form>
 
     // </div>
-};
 
 const mapStateToProps = state => ({
     authenticated: state.session.authenticated
