@@ -7,36 +7,36 @@ const output = {
     res.render("home/index");
   },
 
-  signin: (req, res) => {
-    res.render("home/signin");
+  signIn: (req, res) => {
+    res.render("/signIn");
   },
 
-  register: (req, res) => {
-    res.render("home/register");
+  signUp: (req, res) => {
+    res.render("/signUp");
   },
 };
 
 const process = {
-  signin: async (req, res) => {
+  signIn: async (req, res) => {
     const user = new User(req.body);
-    const response = await user.signin();
+    const response = await user.signIn();
 
     const url = {
       method: "POST",
-      path: "/signin",
+      path: "/signIn",
       status: response.err ? 400 : 200,
     };
 
     return res.status(url.status).json(response);
   },
 
-  register: async (req, res) => {
+  signUp: async (req, res) => {
     const user = new User(req.body);
-    const response = await user.register();
+    const response = await user.signUp();
 
     const url = {
       method: "POST",
-      path: "/register",
+      path: "/signUp",
       status: response.err ? 409 : 201,
     };
 
