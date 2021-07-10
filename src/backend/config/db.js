@@ -12,12 +12,6 @@ const conn = mysql.createConnection({
   database: "auth"
 });
 
-// DB_HOST = "rds-whatelse.co3a9rtnyqgv.ap-northeast-2.rds.amazonaws.com"
-// DB_PORT = 3000
-// DB_USER = "admin"
-// DB_PSWORD = "wnsgh5493#"
-// DB_DATABASE = "auth"
-
 conn.connect(function(err) {  
   if(err) throw "There is no connection to the mysql server..." + err.message;  
   console.info("Connected!");  

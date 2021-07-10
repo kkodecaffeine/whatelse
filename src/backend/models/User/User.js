@@ -7,7 +7,7 @@ class User {
     this.body = body;
   }
 
-  async signin() {
+  async signUn() {
     const client = this.body;
     try {
       const user = await UserStorage.getUserInfo(client.id);
@@ -24,7 +24,7 @@ class User {
     }
   }
 
-  async register() {
+  async signUp() {
     const client = this.body;
     try {
       const response = await UserStorage.save(client);

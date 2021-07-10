@@ -3,12 +3,12 @@
 import db from "../../config/db.js";
 
 class UserStorage {
-  static getUserInfo(id) {
+  static getUserInfo(email) {
     return new Promise((resolve, reject) => {
-      const query = "SELECT * FROM auth.user_info_base WHERE id = ?;";
+      const query = "SELECT * FROM auth.user_info_base WHERE email = ?;";
 
 
-      db.query(query, [id], (err, data) => {
+      db.query(query, [email], (err, data) => {
         if (err) reject(`${err}`);
         else resolve(data[0]);
       });

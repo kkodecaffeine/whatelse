@@ -1,10 +1,10 @@
 // 모듈
 import express from "express";
 import bodyParser from "body-parser";
-import dotenv from "dotenv"; // 어떤 OS 환경에서 개발을 하더라도 동일하게 환경 변수를 등록/취득할 수 있음
+// import dotenv from "dotenv"; // 어떤 OS 환경에서 개발을 하더라도 동일하게 환경 변수를 등록/취득할 수 있음
 
 const app = express();
-dotenv.config();
+// dotenv.config();
 
 // 라우팅
 import home from "./routes/home/index.js";
