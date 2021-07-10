@@ -1,12 +1,11 @@
 import React from "react";
 import * as mutations from "../store/mutations";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
 const SignInComponent = ({ authenticateUser, authenticated }) => {
   return (
     <div id="signIn" className="col s12">
-      <form className="col s12">
+      <form className="col s12" onSubmit={authenticateUser}>
         <div className="form-container">
           <h3 className="teal-text">Hello</h3>
           <div className="row">
@@ -48,9 +47,9 @@ const mapStateToProps = ({ session }) => ({
 const mapDispatchToProps = (dispatch) => ({
   authenticateUser(e) {
     e.preventDefault();
-    let username = e.target[`username`].value;
-    let password = e.target[`password`].value;
-    dispatch(mutations.requestAuthenticateUser(username, password));
+    let email = e.target['email'].value;
+    let password = e.target['password'].value;
+    dispatch(mutations.requestAuthenticateUser(email, password));
   },
 });
 
