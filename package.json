@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve",
@@ -17,9 +18,9 @@
     "@babel/cli": "^7.14.5",
     "@babel/plugin-transform-arrow-functions": "^7.14.5",
     "axios": "^0.21.1",
-    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
+    "os": "^0.1.1",
     "path": "^0.12.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
