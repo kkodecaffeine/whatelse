@@ -7,7 +7,7 @@ class User {
     this.body = body;
   }
 
-  async signUn() {
+  async signIn() {
     const client = this.body;
     try {
       const user = await UserStorage.getUserInfo(client.id);
