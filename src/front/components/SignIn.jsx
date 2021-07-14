@@ -10,13 +10,13 @@ const SignInComponent = ({ authenticateUser, authenticated }) => {
           <h3 className="teal-text">Hello</h3>
           <div className="row">
             <div className="input-field col s12">
-              <input id="email" type="email" className="validate" />
+              <input type="email" name="email" className="validate" />
               <label htmlFor="email">Email</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <input id="password" type="password" className="validate" />
+              <input type="password" name="password" className="validate" />
               <label htmlFor="password">Password</label>
             </div>
           </div>
@@ -26,7 +26,6 @@ const SignInComponent = ({ authenticateUser, authenticated }) => {
               className="btn waves-effect waves-light teal"
               type="submit"
               disabled={authenticated === `PROCESSING`}
-              name="action"
             >
               Connect
             </button>
@@ -47,8 +46,8 @@ const mapStateToProps = ({ session }) => ({
 const mapDispatchToProps = (dispatch) => ({
   authenticateUser(e) {
     e.preventDefault();
-    let email = e.target['email'].value;
-    let password = e.target['password'].value;
+    let email = e.target[`email`].value;
+    let password = e.target[`password`].value;
     dispatch(mutations.requestAuthenticateUser(email, password));
   },
 });

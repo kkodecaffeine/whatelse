@@ -27,7 +27,7 @@ export function* userAuthenticationSaga(){
     while (true){
         const {email, password} = yield take(mutations.REQUEST_AUTHENTICATE_USER);
         try {
-            const { data } = yield axios.post(url + `/authenticate`,{email, password});
+            const { data } = yield axios.post(url + `/authenticate`, {email, password});
             yield put(mutations.setState(data.state));
             // yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED, {
             //     id:"U1", // todo... get ID from response

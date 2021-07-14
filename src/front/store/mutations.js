@@ -51,9 +51,9 @@ export const setTaskName = (taskID, name)=>({
     name
 });
 
-export const requestAuthenticateUser = (username, password)=>({
+export const requestAuthenticateUser = (email, password)=>({
     type:REQUEST_AUTHENTICATE_USER,
-    username,
+    email,
     password
 });
 
