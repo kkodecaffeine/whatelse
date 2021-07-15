@@ -9,5 +9,5 @@ import { authenticationRoute } from "../authenticate/authenticate.ctrl.js";
 router.get("/", ctrl.output.home);
 
 authenticationRoute(app);
-//
+
 export default router;
