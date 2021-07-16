@@ -1,7 +1,6 @@
 import React from "react";
-import { BrowserRouter, Route, Router, Link, Switch } from "react-router-dom";
+import { Route, Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import { ConnectedNavigation } from "./Navigation";
 import { App } from "./App";
 import { store } from "../store";
 import { history } from "../store/history";
