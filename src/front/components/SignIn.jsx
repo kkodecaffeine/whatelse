@@ -1,5 +1,5 @@
 import React from "react";
-import * as mutations from "../store/mutations";
+import * as mutations from "../store/mutations.js";
 import { connect } from "react-redux";
 
 const SignInComponent = ({ authenticateUser, authenticated }) => {

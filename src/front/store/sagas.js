@@ -2,8 +2,8 @@ import { take, put, select } from 'redux-saga/effects';
 import uuid from 'uuid';
 import axios from 'axios';
 
-import { history } from './history'
-import * as mutations from './mutations';
+import { history } from "./history.js"
+import * as mutations from "./mutations.js";
 const url = process.env.NODE_ENV === 'dev' ? 'http://localhost:8080' : 'http://localhost:8080';
 
 export function* taskCreationSaga(){
@@ -29,10 +29,10 @@ export function* userAuthenticationSaga(){
         try {
             const { data } = yield axios.post(url + `/authenticate`, {email, password});
             yield put(mutations.setState(data.state));
-            // yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED, {
-            //     id:"U1", // todo... get ID from response
-            //     token:data.token
-            // }));
+            yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED, {
+                //id:"U1", // todo... get ID from response
+                token:data.token
+            }));
             // history.push(`/dashboard`);
         } catch (e) {
             /* catch block handles failed login */

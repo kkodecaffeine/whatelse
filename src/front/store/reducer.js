@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import * as mutations from './mutations'
+import * as mutations from "./mutations.js";
 
 let defaultState = {
     session:{},

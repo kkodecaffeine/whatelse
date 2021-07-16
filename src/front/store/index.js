@@ -2,8 +2,8 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import {createLogger} from 'redux-logger'
 
-import { reducer } from './reducer'
-import * as sagas from './sagas'
+import { reducer } from "./reducer.js";
+import * as sagas from './sagas.js'
 
 const sagaMiddleware = createSagaMiddleware();
 
