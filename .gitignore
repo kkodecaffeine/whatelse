@@ -3,3 +3,4 @@ node_modules
 src/.env
 dist/bundle.js
 dist/bundle.js
+config/config.json
