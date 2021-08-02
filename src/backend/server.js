@@ -7,6 +7,7 @@ import SequelizeAuto from "sequelize-auto";
 const auto = new SequelizeAuto("auth", "admin", "wnsgh5493#", {
   host: "rds-whatelse.co3a9rtnyqgv.ap-northeast-2.rds.amazonaws.com",
   port: "3306",
+  dialect: "mysql"
 });
 auto.run((err) => {
   if (err) throw err;
