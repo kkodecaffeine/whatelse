@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
+import { Sequelize as _Sequelize } from 'sequelize';
+export default function(sequelize, DataTypes) {
   return sequelize.define('user_info_base', {
     user_id: {
       autoIncrement: true,
@@ -100,7 +100,7 @@ module.exports = function(sequelize, DataTypes) {
     join_dt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP'),
+      defaultValue: _Sequelize.literal('CURRENT_TIMESTAMP'),
       comment: "가입 일시"
     },
     connect_yn: {
