@@ -12,6 +12,13 @@ const auto = new SequelizeAuto("auth", "admin", "wnsgh5493#", {
 auto.run((err) => {
   if (err) throw err;
 });
+import models from "../../models/index.js";
+models.sequelize.sync().then( () => {
+  console.log(" DB 연결 성공");
+}).catch(err => {
+  console.log("연결 실패");
+  console.log(err);
+});
 
 const __dirname = path.resolve();
 // import dotenv from "dotenv"; // 어떤 OS 환경에서 개발을 하더라도 동일하게 환경 변수를 등록/취득할 수 있음
@@ -20,7 +27,10 @@ const app = express();
 // dotenv.config();
 
 // 라우팅
-import home from "./routes/home/index.js";
+//import home from "./routes/home/index.js";
+
+//import home from "../../models/index.js";
+import home from "./routes/index.route.js";
 
 app.set("views", `${__dirname}/src/front/views`);
 app.set("view engine", "ejs");

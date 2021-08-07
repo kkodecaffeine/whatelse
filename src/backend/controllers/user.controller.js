@@ -1,9 +1,9 @@
 "use strict";
 
-import db from "../../../models/index.js";
+import database from "../../../models/index.js";
 
-export async function findAll(req, res) {
-  db.users
+export async function findAll (req,res){
+    database.default
     .findAll({ where: {}, limit: 10 })
     .then((data) => {
       res.send(data);
