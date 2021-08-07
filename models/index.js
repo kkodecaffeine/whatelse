@@ -12,6 +12,7 @@ const __dirname = dirname(__filename);
 const basename = _basename(__filename);
 const env = process.env.NODE_ENV || "development";
 import { readFile } from "fs/promises";
+import model from "../models/user_info_base.js";
 
 const config = JSON.parse(
   await readFile(new URL("../config/config.json", import.meta.url))
@@ -37,16 +38,6 @@ readdirSync(__dirname)
     );
   })
   .forEach((file) => {
-    const model = sequelize.import(path.join(__dirname, file));
-    //db[model.name] = model;
-
-    //import model from `${__dirname}/user_info_base.js`
-    //const model =  await readFile(new URL(path.join(__dirname, "/models", file), import.meta.url));
-
-    // const model = require(path.join(__dirname, "/models", file)).default(
-    //   sequelize,
-    //   Sequelize.DataTypes
-    // );
     db[model.name] = model;
   });
 
