@@ -3,7 +3,7 @@
 import database from "../../../models/index.js";
 
 export async function findAll(req, res) {
-  database.default
+  database.User
     .findAll({ where: {}, limit: 10 })
     .then((data) => {
       res.send(data);
