@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { history } from "./history.js"
 import * as mutations from "./mutations.js";
-const url = process.env.NODE_ENV === 'dev' ? 'http://localhost:8080' : 'http://localhost:8080';
+const url = process.env.NODE_ENV === 'dev' ? 'http://localhost:3000' : 'http://localhost:8000';
 
 export function* taskCreationSaga(){
     while (true){
