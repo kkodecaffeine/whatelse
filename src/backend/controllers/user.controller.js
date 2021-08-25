@@ -26,8 +26,8 @@ export async function findOne(req, res) {
 
   const email = req.body.email;
 
-  database.default
-    .findByPk(email)
+  database.User
+    .findByPk(1) //TODO
     .then((data) => {
       res.send(data);
     })
